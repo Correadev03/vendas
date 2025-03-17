@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Dinâmico</title>
+    <script>
+        // Lista de links que serão alternados
+        const links = [
+            "https://www.exemplo1.com",
+            "https://www.exemplo2.com",
+            "https://www.exemplo3.com"
+        ];
+
+        // Função para escolher um link aleatório da lista
+        function getRandomLink() {
+            const randomIndex = Math.floor(Math.random() * links.length);
+            return links[randomIndex];
+        }
+
+        // Redirecionar para o link escolhido
+        function redirect() {
+            const link = getRandomLink();
+            window.location.href = link;
+        }
+
+        // Redirecionar a cada 30 minutos (1800000 milissegundos)
+        setInterval(redirect, 1800000);
+
+        // Redirecionar imediatamente ao carregar a página
+        window.onload = redirect;
+    </script>
+</head>
+<body>
+    <h1>Redirecionando...</h1>
+    <p>Você será redirecionado para um link em breve.</p>
+</body>
+</html>
